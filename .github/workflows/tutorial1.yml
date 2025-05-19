@@ -1,21 +1,32 @@
+name: tutorial1
+on: push
+
+jobs:
   job1:
+    name: job1
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Python 3.9
+      - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: 3.9
 
-      - name: Print Python version
+      - name: check-python-version
         run: python --version
 
-      - name: Print pip version
-        run: pip --version
+  job2:
+    name: job2
+    runs-on: windows-latest
+    steps:
+      - name: step2
+        run: date
 
-      - name: Echo Job 1 text and date
-        run: |
-          echo "This is Job 1"
-          date
+  job3:
+    name: job3
+    runs-on: ubuntu-latest
+    steps:
+
+
 
 
 
